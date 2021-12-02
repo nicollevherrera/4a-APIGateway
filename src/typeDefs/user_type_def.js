@@ -2,6 +2,7 @@ const { gql } = require('apollo-server');
 
 
 const userTypeDefs = gql`
+
     type User { #modelo usuario
         id: String!
         name: String!

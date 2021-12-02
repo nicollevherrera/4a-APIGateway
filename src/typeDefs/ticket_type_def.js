@@ -42,7 +42,7 @@ const ticketTypeDefs = gql`
 
     extend type Mutation{ 
         createTicket(ticket: TicketInput!): Ticket #crear ticket
-        infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): ticketsByOrganizer
+        infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): [Ticket]
     }
 
 

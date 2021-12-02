@@ -40,7 +40,7 @@ const eventTypeDefs = gql`
 
     extend type Mutation{ 
         createEvent(event: EventInput!): Event #crear evento
-        infoEventOrganizer(infoEventOrganizerData: InfoEventInput! ): eventsByOrganizer #infoevento
+        infoEventOrganizer(infoEventOrganizerData: InfoEventInput! ): [Event] #infoevento
     }
 
 `;
