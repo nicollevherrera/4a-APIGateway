@@ -8,14 +8,18 @@ const userTypeDefs = gql`
         lastname: String!
         typeid: String!
         numberid: String
-        email: String
-        phone: String
+        email: String!
+        phone: String!
         birth: String
         country: String
         password: String
-        role: String
+        role: String!
     }
 
+    extend type Query {
+        userById (id: String!): User  #usuario por ID
+        allUsers(): [User]  #todos lo usuarios
+    } 
 
 `;
 

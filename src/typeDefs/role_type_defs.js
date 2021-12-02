@@ -8,6 +8,11 @@ const roleTypeDefs = gql`
         type: String!
     }
 
+    extend type Query {
+        roleById (id: String!): Role  #rol por ID
+        allRoles(): [Role]  #todos los roles
+    } 
+
 
 `;
 
