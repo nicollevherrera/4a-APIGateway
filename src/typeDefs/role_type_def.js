@@ -3,7 +3,7 @@ const { gql } = require('apollo-server');
 
 const roleTypeDefs = gql`
 
-    type Role {
+    type Role { #modelo rol
         id: String!
         type: String!
     }
@@ -13,6 +13,13 @@ const roleTypeDefs = gql`
         allRoles(): [Role]  #todos los roles
     } 
 
+    input RoleInput{
+        type:String!
+    }
+
+    extend type Mutation{ #crear rol
+        createRole(role: RoleInput!): Role
+    }
 
 `;
 

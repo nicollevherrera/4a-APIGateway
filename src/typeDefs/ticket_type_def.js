@@ -2,7 +2,7 @@ const { gql } = require('apollo-server');
 
 const ticketTypeDefs = gql`
 
-    type Ticket {
+    type Ticket { #modelo ticket
         idticket: String!
         type: String!
         price: String!
@@ -12,15 +12,39 @@ const ticketTypeDefs = gql`
         hour: String
         country: String!
         city: String!
+        organizer: String!
     }
 
     extend type Query {
-        ticketsByName (name: String!):[Ticket], #tickets por nombre
         ticketById(idticket: String!): Ticket, #ticket por ID
         allTickets(): [Ticket] #todos los tickets
+        ticketsByOrganizer (organizer: String!): [Ticket]  #ticket por organizador
+        ticketsByType (type: String!) :[Ticket] #ticket por tipo
+    }
+
+    input TicketInput{ #crear ticket
+        type: String!
+        price: String!
+        name: String!
+        address: String
+        date: String
+        hour: String
+        country: String!
+        city: String!
+        organizer: String!
+    }
+
+    input InfoTicketsOrganizerInput{
+        email: String!
+        organizer: String!
+        numberid: String!
+    }
+
+    extend type Mutation{ 
+        createTicket(ticket: TicketInput!): Ticket #crear ticket
+        infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): ticketsByOrganizer
     }
 
 
 `;
-
     module.exports = ticketTypeDefs; 

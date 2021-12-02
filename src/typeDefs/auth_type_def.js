@@ -3,15 +3,24 @@ const { gql } = require('apollo-server');
 const authTypeDefs = gql`
 
     input LoginInput {
-        username: String!
+        email: String!
         password: String!
+        role: String!
     }
-    input SignUpInput{ #REVISAR*****
+    input SignUpInput{ 
 
-        username: String!
-        password1: String!
-        password2: String!
+        name: String!
+        lastname: String!
+        typeid: String!
+        numberid: String!
+        email: String!
+        phone: String!
+        birth: String
+        country: String
+        password: String
+        role: String!
     }
+
     type Token{
         key: String!
     }
