@@ -13,7 +13,7 @@ const eventTypeDefs = gql`
         address: String
     }
     
-    type Query{
+    extend type Query{
         allEvents(): [Event], #obtener todos los eventos
         eventById (idevent: String!):Event, #obtener evento por ID
         eventByName (name: String!): Event, #obtener evento por nombre
