@@ -38,9 +38,16 @@ const eventTypeDefs = gql`
         numberid: String!
     }
 
+    input IntoEventNameInput{
+        email: String!
+        organizer: String!
+        numberid: String!
+    }
+
     extend type Mutation{ 
         createEvent(event: EventInput!): Event #crear evento
-        infoEventOrganizer(infoEventOrganizerData: InfoEventInput! ): [Event] #infoevento
+        infoEventOrganizer(infoEventOrganizerData: InfoEventInput! ): [Event] #infoevento por organizador
+        infoEventName(infoEventNameDate: infoEventNameInput!): [Event] #info evento por nombre
     }
 
 `;

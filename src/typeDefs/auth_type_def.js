@@ -25,6 +25,7 @@ const authTypeDefs = gql`
     type Token{
         key: String!
     }
+    
     type Mutation {
         logIn(logInData: LoginInput!): Token!
         signUp(signupData: SignUpInput): Token!
