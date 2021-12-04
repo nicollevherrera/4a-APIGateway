@@ -32,9 +32,16 @@ const saleTypeDefs = gql`
         nameEvent: String!
     }
 
+    input InfoSalesStatusInput{
+        email: String!
+        numberid: String!
+        status: String!
+    }
+
     extend type Mutation{
         createSale(sale: SaleInput!): Sale #crear venta
         infoSaleEvent(infoSalesEventData: InfoSalesEventInput!): [Sale] #información de venta por nombre de evento 
+        infoSaleStatus(infoSalesStatusData: InfoSalesStatusInput!): [Sale] #información de venta por estado
     }
     
 

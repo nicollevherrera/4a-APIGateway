@@ -40,9 +40,17 @@ const ticketTypeDefs = gql`
         numberid: String!
     }
 
+    input InfoTicketsTypeInput{
+        email: String!
+        organizer: String!
+        numberid: String!
+    }
+
     extend type Mutation{ 
         createTicket(ticket: TicketInput!): Ticket #crear ticket
-        infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): [Ticket]
+        infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): [Ticket] #información ticket por organizador
+        iinfoTicketsType(infoTicketsTypeData: InfoTicketsTypeInput!): [Ticket]
+        
     }
 
 
