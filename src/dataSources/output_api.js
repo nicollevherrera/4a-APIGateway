@@ -14,11 +14,15 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/ticket/${idTicket}`);
     };
 
+    async allTickets(){
+        return await this.get(`/tickets/`)
+    }
+
     //Mutation Tickets
 
     async createTicket(ticket){
         return await this.post('/ticket', ticket);
-    }
+    };
 
     async infoTicketsOrganizer(organizerTicket){
         return await this.get(`/ticket/${organizerTicket}`);
@@ -39,13 +43,23 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/sale/${statusSale}`);
     };
 
-    async saleByName(nameSale){
-        return await this.get(`/sale/${nameSale}`);
+    async allSales(){
+        return await this.get(`/sales/`)
     };
+
+    //Mutation Sale
 
     async createSale(sale){
         return await this.post('./sale', sale);
-    }
+    };
+
+    async infoSaleEvent (nameSale){
+        return await this.get(`/sale/${nameSale}`)
+    };
+
+    async infoSaleStatus(statusSale){
+        return await this.get(`/sale/${statusSale}`)
+    };
 
     //Event
 
@@ -53,17 +67,24 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/event/${idEvent}`);
     };
 
-    async eventByOrganizer(organizerEvent){
-        return await this.get(`/event/${organizerEvent}`);
+    async allEvents(){
+        return await this.get(`/events/`)
     };
 
-    async eventByName(nameEvent){
-        return await this.get(`/event/${nameEvent}`);
-    };
+
+    //Mutation Event
 
     async createEvent(event){
         return await this.post('/event', event);
-    }
-}
+    };
+
+    async infoEventOrganizer(eventOrganizer){
+        return await this.get(`/event/${eventOrganizer}`);
+    };
+
+    async eventByName(eventName){
+        return await this.get(`/event/${eventName}`);
+    };
+};
 
 module.exports = OutputAPI;
