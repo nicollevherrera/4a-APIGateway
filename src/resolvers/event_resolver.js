@@ -1,4 +1,5 @@
 const eventResolver = {
+    
     Query: {
         allEvents: async(_, { event }, { dataSources }) => {
             return await dataSources.allEvents(event);
@@ -15,5 +16,4 @@ const eventResolver = {
 
     }
 }
-
 module.exports = eventResolver;
