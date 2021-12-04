@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server');
 
-const authTypeDefs = gql`
+const authTypeDefs = gql `
 
     input LoginInput {
         email: String!
