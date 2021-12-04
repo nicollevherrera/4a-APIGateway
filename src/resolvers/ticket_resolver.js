@@ -12,6 +12,21 @@ const ticketResolver = {
         ticketsByType: async(_, { type }, { dataSources }) => {
             return await dataSources.ticketsByType(type);
         }
+    },
+
+    Mutation: {
+
+        createTicket: async(_, { ticket }, { dataSources }) => {
+            return await dataSources.createTicket(ticket)
+        },
+
+        infoTicketsOrganizer: async(_, { infoTicketsOrganizerData }, { dataSources }) => {
+            return await dataSources.infoTicketsOrganizer(infoTicketsOrganizerData)
+        },
+
+        infoTicketsType: async(_, { infoTicketsTypeData }, { dataSources }) => {
+            return await dataSources.infoTicketsType(infoTicketsTypeData)
+        }
     }
 }
 

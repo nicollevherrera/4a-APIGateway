@@ -6,6 +6,12 @@ const userResolver = {
         allUsers: async(_, { user }, { dataSources }) => {
             return await dataSources.allUsers(user);
         }
+    },
+
+    Mutation: {
+        createUser: async(_, { user }, { dataSources }) => {
+            return await dataSources.createUser(user)
+        }
     }
 }
 

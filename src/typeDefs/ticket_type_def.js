@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server');
 
-const ticketTypeDefs = gql`
+const ticketTypeDefs = gql `
 
     type Ticket { #modelo ticket
         idticket: String!
@@ -49,10 +49,10 @@ const ticketTypeDefs = gql`
     extend type Mutation{ 
         createTicket(ticket: TicketInput!): Ticket #crear ticket
         infoTicketsOrganizer(infoTicketsOrganizerData: InfoTicketsOrganizerInput!): [Ticket] #información ticket por organizador
-        iinfoTicketsType(infoTicketsTypeData: InfoTicketsTypeInput!): [Ticket]
+        infoTicketsType(infoTicketsTypeData: InfoTicketsTypeInput!): [Ticket]
         
     }
 
 
-`;
-    module.exports = ticketTypeDefs; 
+;
+module.exports = ticketTypeDefs;
