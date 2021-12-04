@@ -21,11 +21,11 @@ const ticketResolver = {
         },
 
         infoTicketsOrganizer: async(_, { infoTicketsOrganizerData }, { dataSources }) => {
-            return await dataSources.infoTicketsOrganizer(infoTicketsOrganizerData)
+            return await dataSources.infoTicketsOrganizer(ticketsByOrganizer)
         },
 
         infoTicketsType: async(_, { infoTicketsTypeData }, { dataSources }) => {
-            return await dataSources.infoTicketsType(infoTicketsTypeData)
+            return await dataSources.infoTicketsType(ticketsByType)
         }
     }
 }

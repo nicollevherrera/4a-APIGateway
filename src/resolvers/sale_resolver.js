@@ -20,12 +20,12 @@ const saleResolver = {
             return await dataSources.createSale(sale);
         },
 
-        infoSaleEvent: async(_, { infoSalesEventData }, { dataSources }) => {
-            return await dataSources.infoSaleEvent(infoSalesEventData);
+        infoSaleEvent: async(_, { infoSaleEventData }, { dataSources }) => {
+            return await dataSources.infoSaleEvent(salesByEvent);
         },
 
         infoSaleStatus: async(_, { infoSaleStatusData }, { dataSources }) => {
-            return await dataSources.infoSaleStatus(infoSaleStatusData)
+            return await dataSources.infoSaleStatus(salesByStatus)
         }
     }
 }
