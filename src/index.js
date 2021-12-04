@@ -18,5 +18,5 @@ const server = new ApolloServer({
 });
 
 server.listen(process.env.PORT || 4000).then(({ url}) => {
-    console.log(`👍 Its alive: ${url}`);
+    console.log(`👍 It's alive: ${url}`);
 });
