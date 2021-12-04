@@ -54,5 +54,5 @@ const ticketTypeDefs = gql `
     }
 
 
-;
+`
 module.exports = ticketTypeDefs;
