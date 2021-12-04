@@ -3,8 +3,8 @@ const ticketResolver = {
         ticketById: async(_, { idticket }, { dataSources }) => {
             return await dataSources.ticketById(idticket);
         },
-        allTickets: async(_, { ticket }, { dataSources }) => {
-            return await dataSources.allTickets(ticket);
+        allTickets: async(_, { }, { dataSources }) => {
+            return await dataSources.allTickets();
         },
         ticketsByOrganizer: async(_, { organizer }, { dataSources }) => {
             return await dataSources.ticketsByOrganizer(organizer);

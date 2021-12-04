@@ -3,8 +3,8 @@ const saleResolver = {
         saleById: async(_, { idsale }, { dataSources }) => {
             return await dataSources.saleById(idsale)
         },
-        allSales: async(_, { sale }, { dataSources }) => {
-            return await dataSources.allSales(sale);
+        allSales: async(_, {  }, { dataSources }) => {
+            return await dataSources.allSales();
         },
         salesByStatus: async(_, { status }, { dataSources }) => {
             return await dataSources.salesByStatus(status);

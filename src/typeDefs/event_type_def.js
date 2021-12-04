@@ -40,7 +40,7 @@ const eventTypeDefs = gql `
 
     input IntoEventNameInput{
         email: String!
-        organizer: String!
+        name: String!
         numberid: String!
     }
 

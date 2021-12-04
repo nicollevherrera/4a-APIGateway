@@ -21,7 +21,8 @@ const authResolvers = {
                 password: SignUpData.password,
                 role: SignUpData.role
             }
-            await dataSources.userAPI.createUserRequest(accountData);
+            await dataSources.userAPI.createAccountRequest(accountData);
+
             const userData = {
                 username: SignUpData.username,
                 password: SignUpData.password,
