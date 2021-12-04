@@ -1,5 +1,4 @@
 const eventResolver = {
-    
     Query: {
         allEvents: async(_, { event }, { dataSources }) => {
             return await dataSources.allEvents(event);
@@ -14,6 +13,21 @@ const eventResolver = {
             return await dataSources.eventsByOrganizer(organizer);
         }
 
+    },
+
+    Mutation: {
+        createEvent: async(_, { event }, { dataSources }) => {
+            return await dataSources.createEvent(event);
+        },
+
+        infoEventOrganizer: async(_, { infoEventOrganizerData }, { dataSources }) => {
+            return await dataSources.infoEventOrganizer(infoEventOrganizerData);
+        },
+
+        infoEventName: async(_, { infoEventNameDate }, { dataSources }) => {
+            return await dataSources.infoEventName(infoEventNameDate)
+        }
     }
 }
+
 module.exports = eventResolver;

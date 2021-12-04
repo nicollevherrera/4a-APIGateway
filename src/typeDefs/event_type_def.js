@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server');
 
-const eventTypeDefs = gql`
+const eventTypeDefs = gql `
     type Event { #modelo evento
         idevent: String!
         userid: String!
@@ -47,9 +47,9 @@ const eventTypeDefs = gql`
     extend type Mutation{ 
         createEvent(event: EventInput!): Event #crear evento
         infoEventOrganizer(infoEventOrganizerData: InfoEventInput! ): [Event] #infoevento por organizador
-        infoEventName(infoEventNameDate: infoEventNameInput!): [Event] #info evento por nombre
+        infoEventName(infoEventNameData: infoEventNameInput!): [Event] #info evento por nombre
     }
 
 `;
 
-module.exports = eventTypeDefs; 
+module.exports = eventTypeDefs;
