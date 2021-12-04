@@ -21,11 +21,11 @@ const saleResolver = {
         },
 
         infoSaleEvent: async(_, { infoSaleEventData }, { dataSources }) => {
-            return await dataSources.infoSaleEvent(salesByEvent);
+            return await dataSources.infoSaleEvent(infoSaleEventData.nameEvent);
         },
 
         infoSaleStatus: async(_, { infoSaleStatusData }, { dataSources }) => {
-            return await dataSources.infoSaleStatus(salesByStatus)
+            return await dataSources.infoSaleStatus(infoSaleStatusData.status)
         }
     }
 }
