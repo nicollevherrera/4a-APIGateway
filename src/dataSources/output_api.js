@@ -28,10 +28,10 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/ticket/${organizerTicket}`);
     };
 
+
     async infoTicketsType(typeTicket){
         return await this.get(`/ticket/${typeTicket}`);
     };
-
 
     //Sale
 
@@ -61,10 +61,15 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/sale/${statusSale}`)
     };
 
+    async createSale(sale){
+        return await this.post('./sale', sale);
+    }
+
     //Event
 
     async eventById(idEvent){
         return await this.get(`/event/${idEvent}`);
+
     };
 
     async allEvents(){
@@ -86,5 +91,7 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/event/${eventName}`);
     };
 };
+
+
 
 module.exports = OutputAPI;

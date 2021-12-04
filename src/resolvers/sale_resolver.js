@@ -3,8 +3,8 @@ const saleResolver = {
         saleById: async(_, { idsale }, { dataSources }) => {
             return await dataSources.saleById(idsale)
         },
-        allSales: async(_, { sale }, { dataSources }) => {
-            return await dataSources.allSales(sale);
+        allSales: async(_, {  }, { dataSources }) => {
+            return await dataSources.allSales();
         },
         salesByStatus: async(_, { status }, { dataSources }) => {
             return await dataSources.salesByStatus(status);
@@ -20,12 +20,12 @@ const saleResolver = {
             return await dataSources.createSale(sale);
         },
 
-        infoSaleEvent: async(_, { infoSalesEventData }, { dataSources }) => {
-            return await dataSources.infoSaleEvent(infoSalesEventData);
+        infoSaleEvent: async(_, { infoSaleEventData }, { dataSources }) => {
+            return await dataSources.infoSaleEvent(infoSaleEventData.nameEvent);
         },
 
         infoSaleStatus: async(_, { infoSaleStatusData }, { dataSources }) => {
-            return await dataSources.infoSaleStatus(infoSaleStatusData)
+            return await dataSources.infoSaleStatus(infoSaleStatusData.status)
         }
     }
 }
