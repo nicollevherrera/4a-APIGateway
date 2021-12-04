@@ -1,10 +1,8 @@
-const { method } = require('lodash');
 const fetch = require('node-fetch');
-const server = require('../server');
 const serverConfig = require('../server');
 const { ApolloError } = require('apollo-server');
 
-const authentication = async ({ req } => {
+const authentication = async ({ req }) => {
     const token = req.header.authorization || '';
     if(token == ''){
         return {usernameToken: null}
@@ -13,6 +11,7 @@ const authentication = async ({ req } => {
             let requestOptions ={
                 method: 'GET',
                 header: {
+                    "Content-Type": "applicatio/json",
                     "Authorization": "token" + token
                 },
                 redirect: 'follow'
@@ -27,4 +26,7 @@ const authentication = async ({ req } => {
             console.log("Failed", error)
             throw new ApolloError ("Unknow Error", 500);
         };
-})
+    }
+}
+
+modules.export = authentication;
