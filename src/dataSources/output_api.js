@@ -100,7 +100,7 @@ class OutputAPI extends RESTDataSource{
     }
 
     async createUser(user){
-        return await this.get(`/users/${user}`)
+        return await this.post(`/users/${user}`)
     }
 
     //Role
