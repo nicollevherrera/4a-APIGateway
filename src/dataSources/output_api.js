@@ -14,6 +14,18 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/ticket/${idTicket}`);
     };
 
+    async allTickets(){
+        return await this.get(`/tickets/`)
+    }
+
+    async ticketsByOrganizer(organizer){
+        return await this.get(`/ticket/${organizer}`)
+    }
+
+    async ticketsByType(type){
+        return await this.get(`/tickets/${type}`)
+    }
+
     //Mutation Tickets
 
     async createTicket(ticket){
@@ -38,6 +50,10 @@ class OutputAPI extends RESTDataSource{
     async saleByStatus(statusSale){
         return await this.get(`/sale/${statusSale}`);
     };
+    
+    async salesByEvent(eventSale){
+        return await this.get(`/sale/${eventSale}`)
+    }
 
     //Mutation Sale
 
@@ -53,15 +69,18 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/sale/${statusSale}`)
     };
 
-    async createSale(sale){
-        return await this.post('/sale', sale);
-    }
-
     //Event
 
     async eventById(idEvent){
         return await this.get(`/event/${idEvent}`);
+    };
 
+    async eventsByOrganizer(organizerEvent){
+        return await this.get(`/event/${organizerEvent}`)
+    }
+
+    async eventByName(nameEvent){
+        return await this.get(`/event/${nameEvent}`)
     };
 
     //Mutation Event
@@ -70,13 +89,30 @@ class OutputAPI extends RESTDataSource{
         return await this.post('/event', event);
     };
 
-    async infoEventOrganizer(eventOrganizer){
-        return await this.get(`/event/${eventOrganizer}`);
+    async infoEventOrganizer(organizerEvent){
+        return await this.get(`/event/${organizerEvent}`);
     };
 
-    async eventByName(eventName){
-        return await this.get(`/event/${eventName}`);
-    };
+    //users
+
+    async userById(userId){
+        return await this.get(`/users/${userId}`)
+    }
+
+    async createUser(user){
+        return await this.get(`/users/${user}`)
+    }
+
+    //Role
+
+    async roleById(idRole){
+        return await this.get(`/role/${idRole}`)
+    }
+
+    async createRole(){
+        return await this.post(`/role/`)
+    }
+
 };
 
 
