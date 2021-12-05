@@ -1,13 +1,13 @@
 const roleResolver = {
     Query: {
         roleById: async(_, { id }, { dataSources }) => {
-            return await dataSources.roleById(id);
+            return await dataSources.outputAPI.roleById(id);
         },
     },
 
     Mutation: {
         createRole: async (_, {role}, {dataSources}) => {
-            return await dataSources.createRole(role);
+            return await dataSources.outputAPI.createRole(role);
         }
     } 
 }

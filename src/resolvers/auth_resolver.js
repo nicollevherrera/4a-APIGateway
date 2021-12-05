@@ -2,7 +2,7 @@ const authResolver = {
 
     Mutation: {
         logIn: async(_, { credentials }, { dataSources }) => { 
-                return await dataSources.authAPI.authRequest(credentials);
+                return await dataSources.usersAPI.authRequest(credentials);
             
         },
 
@@ -20,14 +20,14 @@ const authResolver = {
                 password: signUpData.password,
                 role: signUpData.role
             }
-            await dataSources.userAPI.createAccountRequest(accountData);
+            await dataSources.usersAPI.createAccountRequest(accountData);
 
             const userData = {
                 username: signUpData.username,
                 password: signUpData.password,
                 role: signUpData.role
             }
-            return await dataSources.authAPI.createUserRequest(userData);
+            return await dataSources.usersAPI.createUserRequest(userData);
         }
     }
 }

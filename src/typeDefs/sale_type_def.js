@@ -20,8 +20,8 @@ const saleTypeDef = gql`
 
     input SaleInput{ #crear venta 
         status: String!
-        price: Int
-        quantity: Int 
+        price: Int!
+        quantity: Int! 
         nameEvent: String!
     }
 
