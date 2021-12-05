@@ -17,7 +17,7 @@ const ticketTypeDef = gql `
 
     extend type Query {
         ticketById(idticket: String!): Ticket, #ticket por ID
-        ticketsByOrganizer (organizer: String!): [Ticket]  #ticket por organizador
+        ticketsByOrganizer(organizer: String!): [Ticket]  #ticket por organizador
         ticketsByType (type: String!) :[Ticket] #ticket por tipo
     }
 
