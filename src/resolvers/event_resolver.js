@@ -1,8 +1,5 @@
 const eventResolver = {
     Query: {
-        allEvents: async(_, {  }, { dataSources }) => {
-            return await dataSources.allEvents();
-        },
         eventById: async(_, { idevent }, { dataSources }) => {
             return await dataSources.eventById(idevent);
         },
@@ -24,8 +21,8 @@ const eventResolver = {
             return await dataSources.infoEventOrganizer(infoEventOrganizerData.organizer);
         },
 
-        infoEventName: async(_, { infoEventNameDate }, { dataSources }) => {
-            return await dataSources.infoEventName(infoEventNameData.name)
+        infoEventName: async(_, { infoEventNameData }, { dataSources }) => {
+            return await dataSources.infoEventName(infoEventNameData.name);
         }
     }
 }

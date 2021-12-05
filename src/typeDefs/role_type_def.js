@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server');
 
 
-const roleTypeDefs = gql`
+const roleTypeDef = gql`
 
     type Role { #modelo rol
         id: String!
@@ -10,7 +10,6 @@ const roleTypeDefs = gql`
 
     extend type Query {
         roleById (id: String!): Role  #rol por ID
-        allRoles(): [Role]  #todos los roles
     } 
 
     input RoleInput{
@@ -23,4 +22,4 @@ const roleTypeDefs = gql`
 
 `;
 
-    module.exports = roleTypeDefs; 
+    module.exports = roleTypeDef; 

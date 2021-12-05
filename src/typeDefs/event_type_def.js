@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server');
 
-const eventTypeDefs = gql `
+const eventTypeDef = gql `
+
     type Event { #modelo evento
         idevent: String!
         userid: String!
@@ -10,11 +11,10 @@ const eventTypeDefs = gql `
         hour: String
         city: String!
         country: String!
-        address: String
+        address: String!
     }
     
-    extend type Query{
-        allEvents(): [Event], #obtener todos los eventos
+    type Query{
         eventById (idevent: String!):Event, #obtener evento por ID
         eventByName (name: String!): Event, #obtener evento por nombre
         eventsByOrganizer (organizer: String!): [Event]  #obtener eventos por organizador
@@ -29,7 +29,7 @@ const eventTypeDefs = gql `
         hour: String
         city: String!
         country: String!
-        address: String
+        address: String!
     }
 
     input InfoEventOrganizerInput{
@@ -40,7 +40,7 @@ const eventTypeDefs = gql `
 
     input IntoEventNameInput{
         email: String!
-        name: String!
+        name: String! #nombre evento
         numberid: String!
     }
 
@@ -52,4 +52,4 @@ const eventTypeDefs = gql `
 
 `;
 
-module.exports = eventTypeDefs;
+module.exports = eventTypeDef;

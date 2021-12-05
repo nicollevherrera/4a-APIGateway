@@ -1,10 +1,7 @@
 const saleResolver = {
     Query: {
         saleById: async(_, { idsale }, { dataSources }) => {
-            return await dataSources.saleById(idsale)
-        },
-        allSales: async(_, {  }, { dataSources }) => {
-            return await dataSources.allSales();
+            return await dataSources.saleById(idsale);
         },
         salesByStatus: async(_, { status }, { dataSources }) => {
             return await dataSources.salesByStatus(status);
@@ -25,7 +22,7 @@ const saleResolver = {
         },
 
         infoSaleStatus: async(_, { infoSaleStatusData }, { dataSources }) => {
-            return await dataSources.infoSaleStatus(infoSaleStatusData.status)
+            return await dataSources.infoSaleStatus(infoSaleStatusData.status);
         }
     }
 }

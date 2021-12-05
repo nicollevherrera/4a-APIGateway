@@ -3,9 +3,6 @@ const ticketResolver = {
         ticketById: async(_, { idticket }, { dataSources }) => {
             return await dataSources.ticketById(idticket);
         },
-        allTickets: async(_, { }, { dataSources }) => {
-            return await dataSources.allTickets();
-        },
         ticketsByOrganizer: async(_, { organizer }, { dataSources }) => {
             return await dataSources.ticketsByOrganizer(organizer);
         },
@@ -17,15 +14,15 @@ const ticketResolver = {
     Mutation: {
 
         createTicket: async(_, { ticket }, { dataSources }) => {
-            return await dataSources.createTicket(ticket)
+            return await dataSources.createTicket(ticket);
         },
 
         infoTicketsOrganizer: async(_, { infoTicketsOrganizerData }, { dataSources }) => {
-            return await dataSources.infoTicketsOrganizer(infoTicketsOrganizerData.organizer)
+            return await dataSources.infoTicketsOrganizer(infoTicketsOrganizerData.organizer);
         },
 
         infoTicketsType: async(_, { infoTicketsTypeData }, { dataSources }) => {
-            return await dataSources.infoTicketsType(infoTicketsTypeData.type)
+            return await dataSources.infoTicketsType(infoTicketsTypeData.type);
         }
     }
 }

@@ -5,7 +5,7 @@ const authTypeDefs = gql `
     input LoginInput {
         email: String!
         password: String!
-        role: String!
+        #role: String!
     }
     
     input SignUpInput{ 
@@ -16,9 +16,9 @@ const authTypeDefs = gql `
         numberid: String!
         email: String!
         phone: String!
-        birth: String
-        country: String
-        password: String
+        birth: String!
+        country: String!
+        password: String!
         role: String!
     }
 
@@ -28,7 +28,7 @@ const authTypeDefs = gql `
     
     type Mutation {
         logIn(logInData: LoginInput!): Token!
-        signUp(signupData: SignUpInput): Token!
+        signUp(signupData: SignUpInput!): Token!
     }
 
 

@@ -1,15 +1,15 @@
 const { gql } = require('apollo-server');
 
-const ticketTypeDefs = gql `
+const ticketTypeDef = gql `
 
     type Ticket { #modelo ticket
         idticket: String!
         type: String!
         price: String!
         name: String!
-        address: String
-        date: String
-        hour: String
+        address: String!
+        date: String!
+        hour: String!
         country: String!
         city: String!
         organizer: String!
@@ -17,7 +17,6 @@ const ticketTypeDefs = gql `
 
     extend type Query {
         ticketById(idticket: String!): Ticket, #ticket por ID
-        allTickets(): [Ticket] #todos los tickets
         ticketsByOrganizer (organizer: String!): [Ticket]  #ticket por organizador
         ticketsByType (type: String!) :[Ticket] #ticket por tipo
     }
@@ -55,4 +54,4 @@ const ticketTypeDefs = gql `
 
 
 `
-module.exports = ticketTypeDefs;
+module.exports = ticketTypeDef;

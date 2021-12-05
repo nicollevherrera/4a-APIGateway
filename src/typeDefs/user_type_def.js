@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server');
 
 
-const userTypeDefs = gql `
+const userTypeDef = gql `
 
     type User { #modelo usuario
         id: String!
@@ -11,15 +11,14 @@ const userTypeDefs = gql `
         numberid: String!
         email: String!
         phone: String!
-        birth: String
-        country: String
-        password: String
+        birth: String!
+        country: String!
+        password: String!
         role: String!
     }
 
     extend type Query {
         userById (id: String!): User  #usuario por ID
-        allUsers(): [User]  #todos lo usuarios
     } 
 
     input UserInput{
@@ -29,9 +28,9 @@ const userTypeDefs = gql `
         numberid: String
         email: String!
         phone: String!
-        birth: String
-        country: String
-        password: String
+        birth: String!
+        country: String!
+        password: String!
         role: String!
     }
 
@@ -44,4 +43,4 @@ const userTypeDefs = gql `
 
 
 
-module.exports = userTypeDefs;
+module.exports = userTypeDef;

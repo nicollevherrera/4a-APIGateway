@@ -1,20 +1,19 @@
 const { gql } = require('apollo-server');
 
 
-const saleTypeDefs = gql`
+const saleTypeDef = gql`
 
     type Sale { #modelo venta
         idsale: String!
         status: String!
-        price: Int
-        quantity: Int 
+        price: Int!
+        quantity: Int!
         nameEvent: String!
     
     }
 
     extend type Query {
         saleById (idsale: String!): Sale #venta por ID
-        allSales (): [Sale] #todas las ventas
         salesByStatus (status: String!): [Sale] #ventas por estado
         salesByEvent (nameEvent: String!): [Sale] #ventas por nombre de evento
     }
@@ -47,4 +46,4 @@ const saleTypeDefs = gql`
 
 `;
 
-    module.exports = saleTypeDefs; 
+    module.exports = saleTypeDef; 

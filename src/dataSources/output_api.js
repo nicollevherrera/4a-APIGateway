@@ -14,10 +14,6 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/ticket/${idTicket}`);
     };
 
-    async allTickets(){
-        return await this.get(`/tickets/`)
-    }
-
     //Mutation Tickets
 
     async createTicket(ticket){
@@ -43,14 +39,10 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/sale/${statusSale}`);
     };
 
-    async allSales(){
-        return await this.get(`/sales/`)
-    };
-
     //Mutation Sale
 
     async createSale(sale){
-        return await this.post('./sale', sale);
+        return await this.post('/sale', sale);
     };
 
     async infoSaleEvent (nameSale){
@@ -62,7 +54,7 @@ class OutputAPI extends RESTDataSource{
     };
 
     async createSale(sale){
-        return await this.post('./sale', sale);
+        return await this.post('/sale', sale);
     }
 
     //Event
@@ -71,11 +63,6 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/event/${idEvent}`);
 
     };
-
-    async allEvents(){
-        return await this.get(`/events/`)
-    };
-
 
     //Mutation Event
 

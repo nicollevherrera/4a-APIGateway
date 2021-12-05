@@ -1,36 +1,35 @@
-const authResolvers = {
-    Mutation: {
-        LoginInput: async(_, { credentials }, { dataSources, usernameToken }) => {
-            if (username == usernameToken) {
-                return await dataSources.authAPI.authRequest(credentials);
-            } else {
-                return null
-            }
+const authResolver = {
 
+    Mutation: {
+        logIn: async(_, { credentials }, { dataSources }) => { 
+                return await dataSources.authAPI.authRequest(credentials);
+            
         },
-        SignUpInput: async(_, { SignUpData }, { dataSources }) => {
+
+        signUp: async(_, { signUpData }, { dataSources }) => {
+
             const accountData = {
-                name: SignUpData.name,
-                lastname: SignUpData.lastname,
-                typeid: SignUpData.typeid,
-                numberid: SignUpData.numberid,
-                email: SignUpData.email,
-                phone: SignUpData.phone,
-                birth: SignUpData.birth,
-                country: SignUpData.country,
-                password: SignUpData.password,
-                role: SignUpData.role
+                name: signUpData.name,
+                lastname: signUpData.lastname,
+                typeid: signUpData.typeid,
+                numberid: signUpData.numberid,
+                email: signUpData.email,
+                phone: signUpData.phone,
+                birth: signUpData.birth,
+                country: signUpData.country,
+                password: signUpData.password,
+                role: signUpData.role
             }
             await dataSources.userAPI.createAccountRequest(accountData);
 
             const userData = {
-                username: SignUpData.username,
-                password: SignUpData.password,
-                role: SignUpData.role
+                username: signUpData.username,
+                password: signUpData.password,
+                role: signUpData.role
             }
             return await dataSources.authAPI.createUserRequest(userData);
         }
     }
 }
 
-module.exports = userResolvers;
+module.exports = authResolver;
