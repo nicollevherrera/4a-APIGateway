@@ -25,6 +25,7 @@ class OutputAPI extends RESTDataSource{
     async createTicket(ticket){
         return await this.post('/ticket', ticket);
     }
+    
 
     //Sale
 
