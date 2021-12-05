@@ -69,6 +69,7 @@ class OutputAPI extends RESTDataSource{
     async infoSaleStatus(infoSalesStatusData){
         return await this.get(`/sale/${infoSalesStatusData.status}`)
     };
+    
 
     //Event
 
