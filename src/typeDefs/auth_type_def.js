@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server');
 
-const authTypeDefs = gql `
+const authTypeDef = gql `
 
     input LoginInput {
         email: String!
@@ -34,4 +34,4 @@ const authTypeDefs = gql `
 
 `;
 
-module.exports = authTypeDefs;
+module.exports = authTypeDef;
