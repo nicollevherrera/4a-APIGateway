@@ -10,8 +10,8 @@ class OutputAPI extends RESTDataSource{
 
     //Ticket
 
-    async ticketById(idTicket){
-        return await this.get(`/ticket/${idTicket}`);
+    async ticketById(idticket){
+        return await this.get(`/ticket/${idticket}`);
     };
 
     async allTickets(){
@@ -114,7 +114,5 @@ class OutputAPI extends RESTDataSource{
     }
 
 };
-
-
 
 module.exports = OutputAPI;
