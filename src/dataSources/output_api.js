@@ -14,12 +14,8 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/ticket/${idticket}`);
     };
 
-    async allTickets(){
-        return await this.get(`/tickets/`)
-    }
-
     async ticketsByOrganizer(organizer){
-        return await this.get(`/ticket/${organizer}`)
+        return await this.get(`/tickets/${organizer}`)
     }
 
     async ticketsByType(type){
@@ -29,54 +25,53 @@ class OutputAPI extends RESTDataSource{
     //Mutation Tickets
 
     async createTicket(ticket){
-        return await this.post('/ticket', ticket);
+        return await this.post('/ticket/', ticket);
     };
 
-    async infoTicketsOrganizer(organizerTicket){
-        return await this.get(`/ticket/${organizerTicket}`);
+    async infoTicketsOrganizer(infoTicketsOrganizerData){
+        return await this.get(`/tickets/${infoTicketsOrganizerData.organizer}`);
     };
 
-    async createTicket(ticket){
-        return await this.post('/ticket', ticket);
-    }
-    
+    async infoTicketsType(infoTicketsTypeData){
+        return await this.get(`/tickets/${infoTicketsTypeData.type}`);
+    };
 
     //Sale
 
-    async saleById(idSale){
-        return await this.get(`/sale/${idSale}`);
+    async saleById(idsale){
+        return await this.get(`/sale/${idsale}`);
     };
 
-    async saleByStatus(statusSale){
-        return await this.get(`/sale/${statusSale}`);
+    async saleByStatus(status){
+        return await this.get(`/sale/${status}`);
     };
     
-    async salesByEvent(eventSale){
-        return await this.get(`/sale/${eventSale}`)
+    async salesByEvent(nameEvent){
+        return await this.get(`/sale/${nameEvent}`)
     }
 
     //Mutation Sale
 
     async createSale(sale){
-        return await this.post('/sale', sale);
+        return await this.post('/sale/', sale);
     };
 
-    async infoSaleEvent (nameSale){
-        return await this.get(`/sale/${nameSale}`)
+    async infoSaleEvent (infoSalesEventData){
+        return await this.get(`/sale/${infoSalesEventData.nameEvent}`)
     };
 
-    async infoSaleStatus(statusSale){
-        return await this.get(`/sale/${statusSale}`)
+    async infoSaleStatus(infoSalesStatusData){
+        return await this.get(`/sale/${infoSalesStatusData.status}`)
     };
 
     //Event
 
-    async eventById(idEvent){
-        return await this.get(`/event/${idEvent}`);
+    async eventById(idevent){
+        return await this.get(`/event/${idevent}`);
     };
 
-    async eventsByOrganizer(organizerEvent){
-        return await this.get(`/event/${organizerEvent}`)
+    async eventsByOrganizer(organizer){
+        return await this.get(`/event/${organizer}`)
     }
 
     async eventByName(nameEvent){
@@ -89,14 +84,18 @@ class OutputAPI extends RESTDataSource{
         return await this.post('/event', event);
     };
 
-    async infoEventOrganizer(organizerEvent){
-        return await this.get(`/event/${organizerEvent}`);
+    async infoEventName(infoEventNameData){
+        return await this.get(`/events/${infoEventNameData.name}`);
+    };
+
+    async infoEventOrganizer(infoEventOrganizerData){
+        return await this.get(`/event/${infoEventOrganizerData.organizer}`);
     };
 
     //users
 
-    async userById(userId){
-        return await this.get(`/users/${userId}`)
+    async userById(id){
+        return await this.get(`see-user/user/${id}`)
     }
 
     async createUser(user){
@@ -105,12 +104,12 @@ class OutputAPI extends RESTDataSource{
 
     //Role
 
-    async roleById(idRole){
-        return await this.get(`/role/${idRole}`)
+    async roleById(id){
+        return await this.get(`see-user/role/${id}`)
     }
 
-    async createRole(){
-        return await this.post(`/role/`)
+    async createRole(role){
+        return await this.post(`see-user/role/`, role)
     }
 
 };
