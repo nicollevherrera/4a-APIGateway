@@ -81,7 +81,7 @@ class OutputAPI extends RESTDataSource{
     //Mutation Event
 
     async createEvent(event){
-        return await this.post('/event', event);
+        return await this.post('/event/', event);
     };
 
     async infoEventName(infoEventNameData){
@@ -92,26 +92,5 @@ class OutputAPI extends RESTDataSource{
         return await this.get(`/event/${infoEventOrganizerData.organizer}`);
     };
 
-    //users
-
-    async userById(id){
-        return await this.get(`see-user/user/${id}`)
-    }
-
-    async createUser(user){
-        return await this.post(`see-user/user/`,user)
-    }
-
-    //Role
-
-    async roleById(id){
-        return await this.get(`see-user/role/${id}`)
-    }
-
-    async createRole(role){
-        return await this.post(`see-user/role/`, role)
-    }
-
-};
-
+}
 module.exports = OutputAPI;

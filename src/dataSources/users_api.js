@@ -12,17 +12,31 @@ class UsersAPI extends RESTDataSource{
         return await this.post('/rest-auth/login', credentials)
     };
 
-    async authRequest(user){
+    async createUserRequest(user){
         return await this.post('/rest-auth/registration', user)
     };
 
-    async userById(user){
-        return await this.get('/see-user/', user)
+
+    //users
+
+    async userById(id){
+        return await this.get(`see-user/user/${id}`)
     }
 
     async createUser(user){
-        return await this.post('/user/', user)
+        return await this.post(`see-user/user/`,user)
     }
+
+    //Role
+
+    async roleById(id){
+        return await this.get(`see-user/role/${id}`)
+    }
+
+    async createRole(role){
+        return await this.post(`see-user/role/`, role)
+    }
+
 };
 
 module.exports = UsersAPI;
