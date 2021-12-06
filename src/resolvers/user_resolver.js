@@ -6,7 +6,7 @@ const userResolver = {
     },
 
     Mutation: {
-        createUser: async(_, { user }, { dataSources }) => {
+        createUser: async(_, { User }, { dataSources }) => {
             return await dataSources.usersAPI.createUser(User);
         }
     }
