@@ -9,7 +9,7 @@ const roleTypeDef = gql`
     }
 
     extend type Query {
-        roleById (id: String!): Role  #rol por ID
+        roleById (id: Int!): Role  #rol por ID
     } 
 
     input RoleInput{
