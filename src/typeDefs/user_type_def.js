@@ -35,7 +35,7 @@ const userTypeDef = gql `
     }
 
     extend type Mutation{ #crear usuario
-        createUser(user: UserInput!): User
+        createUser(User: UserInput!): User
     }
 
 `;

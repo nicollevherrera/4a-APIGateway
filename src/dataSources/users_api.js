@@ -23,8 +23,8 @@ class UsersAPI extends RESTDataSource{
         return await this.get(`see-user/user/${id}/`)
     }
 
-    async createUser(user){
-        return await this.post(`see-user/user/`,user)
+    async createUser(User){
+        return await this.post(`see-user/user/`,User)
     }
 
     //Role
@@ -33,8 +33,9 @@ class UsersAPI extends RESTDataSource{
         return await this.get(`see-user/role/${id}/`)
     }
 
-    async createRole(role){
-        return await this.post(`see-user/roles/`, role)
+    async createRole(Role){
+        Role = new Object(JSON.parse(JSON.stringify(Role)))
+        return await this.post(`see-user/roles/`, Role)
     }
 
 };
