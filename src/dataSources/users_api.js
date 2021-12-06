@@ -9,11 +9,11 @@ class UsersAPI extends RESTDataSource{
     };
 
     async authRequest(credentials){
-        return await this.post('rest-auth/login', credentials)
+        return await this.post('rest-auth/login/', credentials)
     };
 
     async createUserRequest(user){
-        return await this.post('rest-auth/registration', user)
+        return await this.post('rest-auth/registration/', user)
     };
 
 
