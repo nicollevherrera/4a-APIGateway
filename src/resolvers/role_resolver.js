@@ -9,7 +9,7 @@ const roleResolver = {
         createRole: async (_, {role}, {dataSources}) => {
             return await dataSources.usersAPI.createRole(role);
         }
-    } 
+    }
 }
 
 module.exports = roleResolver;
