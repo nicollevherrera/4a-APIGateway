@@ -19,7 +19,7 @@ const authTypeDef = gql `
         birth: String!
         country: String!
         password: String!
-        role: String!
+        role: Int!
     }
 
     type Token{
