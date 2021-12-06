@@ -20,7 +20,7 @@ class UsersAPI extends RESTDataSource{
     //users
 
     async userById(id){
-        return await this.get(`see-user/user/${id}`)
+        return await this.get(`see-user/user/${id}/`)
     }
 
     async createUser(user){
@@ -30,11 +30,11 @@ class UsersAPI extends RESTDataSource{
     //Role
 
     async roleById(id){
-        return await this.get(`see-user/role/${id}`)
+        return await this.get(`see-user/role/${id}/`)
     }
 
     async createRole(role){
-        return await this.post(`see-user/role/`, role)
+        return await this.post(`see-user/roles/`, role)
     }
 
 };
