@@ -27,14 +27,16 @@ class UsersAPI extends RESTDataSource{
         return await this.post(`see-user/user/`,User)
     }
 
-    //Role
+    //Role query
 
     async roleById(id){
         return await this.get(`see-user/role/${id}/`)
     }
 
+    //Role mutation
+
     async createRole(Role){
-        Role = new Object(JSON.parse(JSON.stringify(Role)))
+        //Role = new Object(JSON.parse(JSON.stringify(Role)))
         return await this.post(`see-user/roles/`, Role)
     }
 
