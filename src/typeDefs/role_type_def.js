@@ -4,7 +4,7 @@ const { gql } = require('apollo-server');
 const roleTypeDef = gql`
 
     type Role { #modelo rol
-        id: String!
+        id: Int!
         type: String!
     }
 
