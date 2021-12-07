@@ -6,8 +6,8 @@ const roleResolver = {
     },
 
     Mutation: {
-        createRole: async (_, {Role}, {dataSources}) => {
-            return await dataSources.usersAPI.createRole(Role);
+        createRole: async (_, {type}, {dataSources}) => {
+            return await dataSources.usersAPI.createRole(type);
         }
     }
 }

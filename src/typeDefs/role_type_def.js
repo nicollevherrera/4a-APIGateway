@@ -17,7 +17,7 @@ const roleTypeDef = gql`
     }
 
     extend type Mutation{ #crear rol
-        createRole(Role: RoleInput!): Role
+        createRole(type: RoleInput!): Role
     }
 
 `;
