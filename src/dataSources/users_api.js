@@ -8,12 +8,12 @@ class UsersAPI extends RESTDataSource{
         this.baseURL = serverConfig.users_api_url;
     };
 
-    async authRequest(credentials){
-        return await this.post('rest-auth/login/', credentials)
+    async authRequest(logInData){
+        return await this.post('rest-auth/login/', logInData)
     };
 
-    async createUserRequest(user){
-        return await this.post('rest-auth/registration/', user)
+    async createUserRequest(users){
+        return await this.post('rest-auth/registration/', users)
     };
 
 

@@ -13,6 +13,7 @@ const userTypeDef = gql `
         phone: String!
         birth: String!
         country: String!
+        city: String!
         password: String!
         role: String!
     }
@@ -25,11 +26,12 @@ const userTypeDef = gql `
         name: String!
         lastname: String!
         typeid: String!
-        numberid: String
+        numberid: String!
         email: String!
         phone: String!
         birth: String!
         country: String!
+        city: String!
         password: String!
         role: String!
     }

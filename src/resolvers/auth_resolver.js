@@ -1,14 +1,21 @@
 const authResolver = {
 
     Mutation: {
-        logIn: async(_, { credentials }, { dataSources }) => { 
-                return await dataSources.usersAPI.authRequest(credentials);
+        logIn: async(_, { logInData }, { dataSources }) => { 
+                return await dataSources.usersAPI.authRequest(logInData);
             
         },
 
         signUp: async(_, { signUpData }, { dataSources }) => {
 
-            const accountData = {
+            const authData = {
+                username: signUpData.username,
+                password1: signUpData.password1,
+                password2: signUpData.password2,
+            }
+            await dataSources.usersAPI.createAccountRequest(authData);
+
+            const usersData = {
                 name: signUpData.name,
                 lastname: signUpData.lastname,
                 typeid: signUpData.typeid,
@@ -17,17 +24,11 @@ const authResolver = {
                 phone: signUpData.phone,
                 birth: signUpData.birth,
                 country: signUpData.country,
+                city: signUpData.city,
                 password: signUpData.password,
                 role: signUpData.role
             }
-            await dataSources.usersAPI.createAccountRequest(accountData);
-
-            const userData = {
-                username: signUpData.username,
-                password: signUpData.password,
-                role: signUpData.role
-            }
-            return await dataSources.usersAPI.createUserRequest(userData);
+            return await dataSources.usersAPI.createUserRequest(usersData);
         }
     }
 }
