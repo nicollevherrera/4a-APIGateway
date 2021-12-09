@@ -18,11 +18,11 @@ const eventResolver = {
         },
 
         infoEventOrganizer: async(_, { infoEventOrganizerData }, { dataSources }) => {
-            return await dataSources.outputAPI.infoEventOrganizer(infoEventOrganizerData.organizer);
+            return await dataSources.outputAPI.infoEventOrganizer(infoEventOrganizerData);
         },
 
         infoEventName: async(_, { infoEventNameData }, { dataSources }) => {
-            return await dataSources.outputAPI.infoEventName(infoEventNameData.name);
+            return await dataSources.outputAPI.infoEventName(infoEventNameData);
         }
     }
 }
