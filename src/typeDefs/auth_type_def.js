@@ -30,7 +30,7 @@ const authTypeDef = gql `
     
     type Mutation {
         logIn(logInData: LoginInput!): Token!
-        signUp(signupData: SignUpInput!): Token!
+        signUp(signUpData: SignUpInput!): Token!
     }
 
 

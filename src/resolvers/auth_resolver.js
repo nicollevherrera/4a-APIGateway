@@ -28,7 +28,7 @@ const authResolver = {
                 password: signUpData.password,
                 role: signUpData.role
             }
-            return await dataSources.usersAPI.createUserRequest(usersData);
+            return await dataSources.usersAPI.createUser(usersData);
         }
     }
 }

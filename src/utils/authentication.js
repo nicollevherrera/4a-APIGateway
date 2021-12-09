@@ -3,15 +3,17 @@ const serverConfig = require('../server');
 const { ApolloError } = require('apollo-server');
 
 const authentication = async ({ req }) => {
+    
     const token = req.header.authorization || '';
     if(token == ''){
         return {usernameToken: null}
     }else{
+        console.log("entra")
         try{
             let requestOptions ={
                 method: 'GET',
                 header: {
-                    "Content-Type": "applicatio/json",
+                    "Content-Type": "application/json",
                     "Authorization": "token" + token
                 },
                 redirect: 'follow'
@@ -21,7 +23,7 @@ const authentication = async ({ req }) => {
                 console.log("Fallo", response)
                 throw new ApolloError("Inactive session - 401", 401);
             }
-            return { usernameToken: response.json().username}
+            return { usernameToken: (await response.json()).username}
         } catch(error){
             console.log("Failed", error)
             throw new ApolloError ("Unknow Error", 500);

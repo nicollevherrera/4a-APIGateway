@@ -12,7 +12,7 @@ class UsersAPI extends RESTDataSource{
         return await this.post('rest-auth/login/', logInData)
     };
 
-    async createUserRequest(users){
+    async createAccountRequest(users){
         return await this.post('rest-auth/registration/', users)
     };
 
@@ -24,7 +24,7 @@ class UsersAPI extends RESTDataSource{
     }
 
     async createUser(User){
-        return await this.post(`see-user/user/`,User)
+        return await this.post(`see-user/users/`,User)
     }
 
     //Role query
