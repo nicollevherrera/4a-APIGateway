@@ -5,7 +5,7 @@ const ticketTypeDef = gql `
     type Ticket { #modelo ticket
         idticket: String!
         type: String!
-        price: String!
+        price: Float!
         name: String!
         address: String!
         date: String!
@@ -23,7 +23,7 @@ const ticketTypeDef = gql `
 
     input TicketInput{ #crear ticket
         type: String!
-        price: String!
+        price: Float!
         name: String!
         address: String
         date: String
