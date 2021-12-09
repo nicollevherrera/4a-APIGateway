@@ -6,6 +6,7 @@ const eventTypeDef = gql `
         idevent: String!
         userid: String!
         name: String!
+        email: String!
         organizer: String!
         date: String!
         hour: String
@@ -24,6 +25,7 @@ const eventTypeDef = gql `
     input EventInput{ #crear venta
         userid: String!
         name: String!
+        email: String!
         organizer: String!
         date: String!
         hour: String

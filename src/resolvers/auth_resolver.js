@@ -1,9 +1,9 @@
 const authResolver = {
 
     Mutation: {
-        logIn: async(_, { logInData }, { dataSources }) => { 
-                return await dataSources.usersAPI.authRequest(logInData);
-            
+        logIn: async(_, { logInData }, { dataSources }) => {
+            return await dataSources.usersAPI.authRequest(logInData);
+
         },
 
         signUp: async(_, { signUpData }, { dataSources }) => {
